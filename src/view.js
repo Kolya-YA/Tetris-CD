@@ -67,14 +67,14 @@ export default class View {
     this.clearScreen();
 
     this.context.fillStyle = 'white';
-    this.context.font = '18px "Press Start 2P"';
+    this.context.strokeStyle = 'white';
     this.context.textAlign = 'center';
     this.context.textBaseline = 'middle';
-    this.context.fillText('GAME OVER', this.width / 2, this.height / 2 - 48);
-    this.context.font = '12px "Press Start 2P"';
+    this.context.font = '36px "Press Start 2P"';
+    this.context.strokeText('GAME OVER', this.width / 2, this.height / 2 - 72);
+    this.context.strokeStyle = 'none';
+    this.context.font = '13px "Press Start 2P"';
     this.context.fillText(`Score: ${score} • Level: ${level} • Lines: ${lines}`, this.width / 2, this.height / 2);
-    this.context.fillText(`Level: ${level}`, this.width / 2, this.height / 2);
-    this.context.fillText(`Lines: ${lines}`, this.width / 2, this.height / 2);
     this.context.font = '18px "Press Start 2P"';
     this.context.fillText('Press ENTER to Restart', this.width / 2, this.height / 2 + 96);
   }
