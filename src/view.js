@@ -63,7 +63,7 @@ export default class View {
     this.context.fillText('Press ENTER to Resume', this.width / 2, this.height / 2);
   }
   
-  renderGameOverScreen({ score }) {
+  renderGameOverScreen({ score, level, lines}) {
     this.clearScreen();
 
     this.context.fillStyle = 'white';
@@ -71,7 +71,11 @@ export default class View {
     this.context.textAlign = 'center';
     this.context.textBaseline = 'middle';
     this.context.fillText('GAME OVER', this.width / 2, this.height / 2 - 48);
-    this.context.fillText(`Score: ${score}`, this.width / 2, this.height / 2);
+    this.context.font = '12px "Press Start 2P"';
+    this.context.fillText(`Score: ${score} • Level: ${level} • Lines: ${lines}`, this.width / 2, this.height / 2);
+    this.context.fillText(`Level: ${level}`, this.width / 2, this.height / 2);
+    this.context.fillText(`Lines: ${lines}`, this.width / 2, this.height / 2);
+    this.context.font = '18px "Press Start 2P"';
     this.context.fillText('Press ENTER to Restart', this.width / 2, this.height / 2 + 96);
   }
 
